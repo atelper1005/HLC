@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Calculadora IMC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Calcula tu IMC</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="floating">Altura (cm)</ion-label>
+    <ion-input [(ngModel)]="altura" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Peso (kg)</ion-label>
+    <ion-input [(ngModel)]="peso" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="calcularIMC()">Calcular</ion-button>
+  <ion-button expand="full" (click)="reiniciar()">Reiniciar</ion-button>
+
+  <ion-item *ngIf="imcResultado">
+    <ion-label>Índice de Masa Corporal (IMC)</ion-label>
+    <ion-text>{{ imcResultado }}</ion-text>
+  </ion-item>
+
+ <br>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>Composición Corporal</ion-col>
+      <ion-col>Índice de Masa Corporal</ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>Bajo peso</ion-col>
+      <ion-col>Menos de 18.5</ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>Peso saludable</ion-col>
+      <ion-col>18.5 - 24.9</ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>Sobrepeso</ion-col>
+      <ion-col>25.0 - 29.9</ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>Obesidad</ion-col>
+      <ion-col>30+</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
