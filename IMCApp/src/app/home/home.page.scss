@@ -25,3 +25,106 @@
 #container a {
   text-decoration: none;
 }
+
+ion-button {
+  background-color: rgb(55, 207, 105);
+}
+
+ion-col {
+  background-color: rgba(51, 214, 91, 0.774);
+  border: solid 1px #fff;
+  color: #000;
+  text-align: center;
+}
+
+//Estilos pantallas pequeña
+@media (max-width: 750px) {
+  #container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  #container p {
+    font-size: 18px;
+    color: mintcream;
+  }
+
+  ion-col {
+    background-color: wheat;
+    border: solid 1px #fff;
+    color: #000;
+    text-align: center;
+  }
+}
+
+//Estilos pantallas grandes
+@media (min-width: 992px) {
+  #container{
+    background-color: red;
+    font-family: 'Comic Sans MS';
+  }
+  #container strong {
+    font-size: 28px;
+
+  }
+
+  #container p {
+    font-size: 22px;
+    color: burlywood;  
+  }
+
+  ion-col {
+    background-color: greenyellow;
+    border: solid 1px #fff;
+    color: #000;
+    text-align: center;
+  }
+}
+
+//Estillos pantallas medianas
+@media (min-width: 750px) and (max-width: 992px) {
+  #container {
+    background-color: darkslateblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    strong {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  ion-col {
+    border: 1px solid #0c86a5;
+    text-align: center;
+    background-color: thistle;
+  }
+}
+
+//Portrait
+@media (orientation: portrait) {
+  #container {
+    background-color: darkkhaki;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  h6 {
+    background-color: coral;
+    color: #000;
+  }
+}
+
+//Pantalla apaisada
+@media (orientation: landscape) {
+  #container {
+    background-color: darkgrey; 
+  }
+
+  ion-col {
+    display: none;
+  }
+}

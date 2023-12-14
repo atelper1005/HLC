@@ -23,8 +23,8 @@
     <ion-input [(ngModel)]="peso" type="number"></ion-input>
   </ion-item>
 
-  <ion-button expand="full" (click)="calcularIMC()">Calcular</ion-button>
-  <ion-button expand="full" (click)="reiniciar()">Reiniciar</ion-button>
+  <ion-button expand="full" (click)="calcularIMC()" color="success">Calcular</ion-button>
+  <ion-button expand="full" (click)="reiniciar()" color="danger">Reiniciar</ion-button>
 
   <ion-item *ngIf="imcResultado">
     <ion-label>Índice de Masa Corporal (IMC)</ion-label>
@@ -56,3 +56,9 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h6>Copyright - Todos los derechos reservados a Antonio Jesús Téllez Perdigones</h6>
+  </ion-toolbar>
+</ion-footer>
