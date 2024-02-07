@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista Música
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista Música</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="listaCanciones">
+    <h1>Lista de Canciones</h1>
+    <ion-list>
+      <ion-item *ngFor="let documentCancion of arrayColeccionCanciones" (click)="selecCancion(documentCancion.id, documentCancion.cancion)">
+        <ion-grid>
+          <ion-row>
+            <h2>{{documentCancion.cancion.cancion}}</h2>
+          </ion-row>
+          <ion-row>
+            <p><Strong>Autor</Strong><br/>{{documentCancion.cancion.autor}}</p>
+          </ion-row>
+          <ion-row presentation="date">
+            <p><Strong>Fecha de Publicación</Strong><br/>{{documentCancion.cancion.fechaPublicacion}}</p>
+          </ion-row>
+          <ion-row>
+            <img src="documentCancion.cancion.imagenURL" alt="imagenPortadaCancion">
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button (click)="clickBotonAddCancion()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

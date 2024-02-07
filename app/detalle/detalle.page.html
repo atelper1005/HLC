@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalles Canción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalles Canción</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <br>
+  <ion-label>Título Canción</ion-label>
+  <ion-input [(ngModel)]="document.data.cancion"></ion-input>
+  <hr>
+  <ion-label>Autor</ion-label>
+  <ion-input [(ngModel)]="document.data.autor"></ion-input>
+  <hr>
+  <ion-label>Fecha de Publicación</ion-label>
+  <ion-datetime type="date" [(ngModel)]="document.data.fechaPublicacion"></ion-datetime>
+  <hr>
+  <ion-label>Imagen Portada</ion-label>
+  <img [src]="imagenSelec" *ngIf="imagenSelec" alt="imagenPortadaCancion">
+
+  <!-- Botones de acción -->
+  <ion-button (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
+  <hr>
+  <ion-button *ngIf="existeCancion==false" (click)="clickBotonInsertar()">Añadir canción</ion-button>
+  <ion-button  id="present-alert" *ngIf="existeCancion==true">Borrar canción</ion-button>
+  <ion-alert trigger="present-alert" header="Borrar canción, ¿Desea continuar?"
+   [buttons]="alertButtons">
+  </ion-alert>
+  <ion-button *ngIf="existeCancion==true" (click)="clickBotonModificar()">Modificar canción</ion-button>
+  
+</ion-content>
